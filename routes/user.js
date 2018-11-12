@@ -7,7 +7,7 @@ router.get('/', async (req, res, next) => {
     try {
         const users = await User.findAll();
         res.send(userList(users));
-    } catch (error) { next(error) }
+    } catch (error) { next(error); }
 });
 
 router.get('/:userId', async (req, res, next) => {
@@ -20,7 +20,7 @@ router.get('/:userId', async (req, res, next) => {
         });
 
         res.send(userPages(user, pages));
-    } catch (error) { next(error) }
-})
+    } catch (error) { next(error); }
+});
 
 module.exports = router;
